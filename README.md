@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Zeyadmosalem
-- 👀 I’m interested in Cloud Architect and Dev Ops
-- 🌱 I’m currently learning AWS
+- 👀 I’m interested in Big Data Engineering, Web Development andMmobile App Development
+- 🌱 I’m currently learning Big Data Engineering
 - 💞️ I’m looking to collaborate on projects
 - 📫 How to reach me zeyadmosalem@gmail.com
 <!---
