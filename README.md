@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @Zeyadmosalem
-- 👀 I’m interested in Big Data Engineering, Web Development andMmobile App Development
+- 👀 I’m interested in Big Data Engineering, Web Development and Mobile App Development
 - 🌱 I’m currently learning Big Data Engineering
 - 💞️ I’m looking to collaborate on projects
 - 📫 How to reach me zeyadmosalem@gmail.com
