@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A00E0,50:7C3AED,100:A855F7&height=190&section=header&text=Zeyad%20Salem&fontSize=52&fontColor=ffffff&fontAlignY=34&animation=fadeIn&desc=AI%20%2F%20LLM%20Application%20Engineer&descAlignY=54&descSize=16" alt="Zeyad Salem" />
+  <img src="./8351160.gif" width="100%" alt="Animated pixel-art cockpit banner" />
 </p>
 
 <p align="center">
