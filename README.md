@@ -2,7 +2,7 @@
   <img src="./8351160.gif" width="100%" alt="Animated pixel-art cockpit banner" />
 </p>
 
-<h1 align="center">Zeyad&nbsp;Salem</h1>
+<h1 align="center">Zeyad M. Salem</h1>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=A855F7&center=true&vCenter=true&width=620&lines=AI+%2F+LLM+Application+Engineer;RAG+Systems+%C2%B7+Text-to-SQL+Agents;React+%2B+TypeScript+%C2%B7+Python;Building+AraBIRD+%E2%86%92+Modern+Agent+Pipelines;Open+to+Remote+Work" alt="Subtitle" />
