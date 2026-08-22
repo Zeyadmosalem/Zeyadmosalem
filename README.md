@@ -2,6 +2,8 @@
   <img src="./8351160.gif" width="100%" alt="Animated pixel-art cockpit banner" />
 </p>
 
+<h1 align="center">Zeyad&nbsp;Salem</h1>
+
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=A855F7&center=true&vCenter=true&width=620&lines=AI+%2F+LLM+Application+Engineer;RAG+Systems+%C2%B7+Text-to-SQL+Agents;React+%2B+TypeScript+%C2%B7+Python;Building+AraBIRD+%E2%86%92+Modern+Agent+Pipelines;Open+to+Remote+Work" alt="Subtitle" />
 </p>
@@ -26,31 +28,24 @@
 
 <img align="right" width="360" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" alt="coding animation" />
 
-**About**
+### About
 
 AI/LLM application engineer working on the layer between language models and real data — retrieval-augmented generation, text-to-SQL agents, and the interfaces that make them usable. I care about pipelines that survive contact with production, not just demos.
 
-**Building**
+### Building
 
 **AraBIRD** — Arabic text-to-SQL, working toward modern agent pipelines.
 
-**Working with**
+### Working with
 
 Retrieval architectures, agent orchestration, and React/TypeScript front ends for LLM-backed tools.
 
-**Open to remote work.**
-
 <br clear="right" />
 
----
-
-**Stack**
+### Stack
 
 <p>
-  <img src="https://skillicons.dev/icons?i=python,ts,js,react,nextjs,tailwind,nodejs&theme=dark" alt="stack row 1" />
-</p>
-<p>
-  <img src="https://skillicons.dev/icons?i=fastapi,postgres,mysql,docker,git,github,linux&theme=dark" alt="stack row 2" />
+  <img src="https://skillicons.dev/icons?i=python,ts,js,react,nextjs,tailwind,nodejs,fastapi,postgres,mysql,docker,git,github,linux&theme=dark&perline=7" alt="Tech stack" />
 </p>
 
 Also working with: `LangChain` &nbsp; `LlamaIndex` &nbsp; `RAG` &nbsp; `Text-to-SQL` &nbsp; `pgvector` &nbsp; `Qdrant` &nbsp; `Hugging Face` &nbsp; `Ollama` &nbsp; `OpenAI API` &nbsp; `Pandas`
@@ -77,6 +72,12 @@ Also working with: `LangChain` &nbsp; `LlamaIndex` &nbsp; `RAG` &nbsp; `Text-to-
 </picture>
 
 </div>
+
+<p align="center">
+  <a href="mailto:zeyadmosalem@gmail.com">
+    <img src="https://img.shields.io/badge/Open%20to%20remote%20work-Get%20in%20touch-A855F7?style=for-the-badge&logo=gmail&logoColor=white" alt="Open to remote work — get in touch" />
+  </a>
+</p>
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:A855F7,50:7C3AED,100:4A00E0&height=110&section=footer" alt="" />
