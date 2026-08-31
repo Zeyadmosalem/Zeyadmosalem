@@ -96,7 +96,7 @@ question and evidence hint across BIRD — and the retrieval architecture.
 `TypeScript (Supabase Edge Functions)` &nbsp;`Supabase` &nbsp;`Cloudflare Workers` &nbsp;`Node.js` &nbsp;`Vite` &nbsp;`pandas` &nbsp;`Linux`
 
 <p>
-  <img src="https://skillicons.dev/icons?i=python,js,ts,react,nodejs,vite,postgres,supabase,cloudflare,git,linux&theme=dark&perline=6" alt="Tech stack" />
+  <img src="https://skillicons.dev/icons?i=python,js,ts,react,nodejs,vite,postgres,supabase,cloudflare,vitest,githubactions,git,linux&theme=dark&perline=7" alt="Tech stack" />
 </p>
 
 ---
