@@ -43,14 +43,6 @@ tests, and measured against a benchmark rather than a demo.
 
 ### Featured work
 
-#### [Arabic-BIRD](https://github.com/Zeyadmosalem/Graduation)
-**A schema-enriched Arabic extension of the BIRD text-to-SQL benchmark.**
-Aligned English–Arabic question and evidence pairs, with column-level descriptions
-and foreign-key context added to each schema to support schema linking and
-cross-lingual generalization. *My contribution: Arabic translation of the dataset.*
-
-`text-to-sql` &nbsp;`arabic-nlp` &nbsp;`semantic-parsing` &nbsp;`benchmark`
-
 #### [NC Spark](https://github.com/Zeyadmosalem/nc-spark)
 **A role-based compliance training platform that can prove who did what.**
 Four portals and seven authorable activity types. Quizzes are graded server-side —
@@ -61,9 +53,21 @@ append-only ledger, so a badge can never disagree with its record.
 React 19 · Vite 8 · Supabase / Postgres 17 · Cloudflare Workers
 **1,828 tests · 91% statement coverage**
 
-#### [CCER-SQL](https://github.com/AbdelrahmanAboegela/ccer-sql)
-**Text-to-SQL with semantic schema retrieval (CCER) and a LangGraph agent.**
-Collaborator.
+#### Arabic-BIRD & CCER-SQL — cross-lingual Arabic→English text-to-SQL
+*Research project. Repositories are private pending publication.*
+
+A bilingual adaptation of the BIRD benchmark, plus a retrieval-centric agentic
+pipeline. Multilingual embeddings (`intfloat/multilingual-e5-base`) let Arabic
+questions retrieve English schema elements in a shared space with no
+task-specific fine-tuning; a LangGraph agent then generates SQL candidates,
+executes them against the real database, picks a winner by self-consistency
+voting, and escalates to refinement on failure.
+
+**96.43% Recall@5** on table selection · **60% execution accuracy** on the
+English pilot · **99.77%** gold-graph column coverage
+
+My contribution: the Arabic dataset — human-reviewed translations of every
+question and evidence hint across BIRD — and the retrieval architecture.
 
 ---
 
