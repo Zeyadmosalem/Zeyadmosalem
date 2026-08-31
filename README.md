@@ -53,6 +53,16 @@ append-only ledger, so a badge can never disagree with its record.
 React 19 · Vite 8 · Supabase / Postgres 17 · Cloudflare Workers
 **1,828 tests · 91% statement coverage**
 
+#### [Beyond Seen Mistakes](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes) — contributor
+**A matched test of error-composition generalization in exercise assessment.**
+Source of the JAC-ECC 2026 HAR–EAS submission, stress-testing six models
+including ST-GCN and FACT against diagnosis combinations withheld from training.
+
+My contribution: the test suite and CI for the published pipeline — data-loader,
+split-protocol, training edge-case and reproduction tests — plus a fix making
+reproduction checks numerical rather than bit-for-bit.
+[My commits →](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes/commits?author=Zeyadmosalem)
+
 #### Arabic-BIRD & CCER-SQL — cross-lingual Arabic→English text-to-SQL
 *Research project. Repositories are private pending publication.*
 
