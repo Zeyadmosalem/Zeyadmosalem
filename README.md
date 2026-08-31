@@ -5,7 +5,7 @@
 <h1 align="center">Zeyad&nbsp;M.&nbsp;Salem</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=A855F7&center=true&vCenter=true&width=640&lines=AI+%2F+LLM+Application+Engineer;Text-to-SQL+%C2%B7+RAG+%C2%B7+Retrieval+Systems;Python+%C2%B7+TypeScript+%C2%B7+React+%C2%B7+PostgreSQL;Arabic-BIRD+%E2%80%94+Cross-Lingual+Semantic+Parsing;Open+to+Remote+Work" alt="AI / LLM Application Engineer" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=A855F7&center=true&vCenter=true&width=640&lines=AI+%2F+LLM+Application+Engineer;Text-to-SQL+%C2%B7+RAG+%C2%B7+Retrieval+Systems;Python+%C2%B7+JavaScript+%C2%B7+React+%C2%B7+PostgreSQL;Arabic-BIRD+%E2%80%94+Cross-Lingual+Semantic+Parsing;Open+to+Remote+Work" alt="AI / LLM Application Engineer" />
 </p>
 
 <p align="center">
@@ -84,16 +84,19 @@ question and evidence hint across BIRD — and the retrieval architecture.
 ### Stack
 
 **Core**
-`Python` &nbsp;`TypeScript` &nbsp;`JavaScript` &nbsp;`React` &nbsp;`PostgreSQL` &nbsp;`Git`
+`Python` &nbsp;`JavaScript` &nbsp;`React` &nbsp;`PostgreSQL` &nbsp;`Git`
 
 **LLM & retrieval**
-`Text-to-SQL` &nbsp;`RAG` &nbsp;`Schema linking` &nbsp;`Cross-lingual semantic parsing` &nbsp;`BIRD benchmark` &nbsp;`LangGraph` &nbsp;`Hugging Face Transformers` &nbsp;`OpenAI API`
+`Text-to-SQL` &nbsp;`Retrieval-augmented generation` &nbsp;`Schema linking` &nbsp;`Cross-lingual semantic parsing` &nbsp;`LangGraph` &nbsp;`sentence-transformers / multilingual-e5` &nbsp;`Groq` &nbsp;`BIRD benchmark`
+
+**Testing & CI**
+`Vitest` &nbsp;`Playwright` &nbsp;`Testing Library` &nbsp;`pytest` &nbsp;`GitHub Actions`
 
 **Also working with**
-`Next.js` &nbsp;`Tailwind` &nbsp;`Node.js` &nbsp;`FastAPI` &nbsp;`Supabase` &nbsp;`Cloudflare Workers` &nbsp;`Docker` &nbsp;`Linux` &nbsp;`pandas` &nbsp;`MySQL`
+`TypeScript (Supabase Edge Functions)` &nbsp;`Supabase` &nbsp;`Cloudflare Workers` &nbsp;`Node.js` &nbsp;`Vite` &nbsp;`pandas` &nbsp;`Linux`
 
 <p>
-  <img src="https://skillicons.dev/icons?i=python,ts,js,react,nextjs,tailwind,nodejs,fastapi,postgres,supabase,cloudflare,docker,git,linux&theme=dark&perline=7" alt="Tech stack" />
+  <img src="https://skillicons.dev/icons?i=python,js,ts,react,nodejs,vite,postgres,supabase,cloudflare,git,linux&theme=dark&perline=6" alt="Tech stack" />
 </p>
 
 ---
