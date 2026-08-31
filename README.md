@@ -5,7 +5,7 @@
 <h1 align="center">Zeyad&nbsp;M.&nbsp;Salem</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=A855F7&center=true&vCenter=true&width=620&lines=AI+%2F+LLM+Application+Engineer;RAG+Systems+%C2%B7+Text-to-SQL+Agents;React+%2B+TypeScript+%C2%B7+Python;Building+AraBIRD+%E2%86%92+Modern+Agent+Pipelines;Open+to+Remote+Work" alt="Subtitle" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=A855F7&center=true&vCenter=true&width=640&lines=AI+%2F+LLM+Application+Engineer;Text-to-SQL+%C2%B7+RAG+%C2%B7+Retrieval+Systems;Python+%C2%B7+TypeScript+%C2%B7+React+%C2%B7+PostgreSQL;Arabic-BIRD+%E2%80%94+Cross-Lingual+Semantic+Parsing;Open+to+Remote+Work" alt="AI / LLM Application Engineer" />
 </p>
 
 <p align="center">
@@ -18,37 +18,69 @@
   </a>
   &nbsp;
   <a href="https://github.com/Zeyadmosalem?tab=followers">
-    <img src="https://img.shields.io/github/followers/Zeyadmosalem?style=flat-square&color=A855F7&labelColor=1a1b27&logo=github&logoColor=white" alt="Followers" />
+    <img src="https://img.shields.io/github/followers/Zeyadmosalem?style=flat-square&color=A855F7&labelColor=1a1b27&logo=github&logoColor=white" alt="GitHub followers" />
   </a>
-  &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=Zeyadmosalem&style=flat-square&color=A855F7&label=Profile+Views" alt="Profile views" />
 </p>
 
 ---
 
-<img align="right" width="360" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" alt="coding animation" />
+<img align="right" width="330" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" alt="" />
 
 ### About
 
-AI/LLM application engineer working on the layer between language models and real data — retrieval-augmented generation, text-to-SQL agents, and the interfaces that make them usable. I care about pipelines that survive contact with production, not just demos.
+I build the layer between language models and real data — text-to-SQL, retrieval,
+and the interfaces that make model output usable.
 
-### Building
+Most of my current work is **cross-lingual semantic parsing**: getting models to
+answer questions over relational databases in Arabic as reliably as in English.
 
-**AraBIRD** — Arabic text-to-SQL, working toward modern agent pipelines.
-
-### Working with
-
-Retrieval architectures, agent orchestration, and React/TypeScript front ends for LLM-backed tools.
+I care about systems that hold up under scrutiny — graded server-side, covered by
+tests, and measured against a benchmark rather than a demo.
 
 <br clear="right" />
 
+---
+
+### Featured work
+
+#### [Arabic-BIRD](https://github.com/Zeyadmosalem/Graduation)
+**A schema-enriched Arabic extension of the BIRD text-to-SQL benchmark.**
+Aligned English–Arabic question and evidence pairs, with column-level descriptions
+and foreign-key context added to each schema to support schema linking and
+cross-lingual generalization. *My contribution: Arabic translation of the dataset.*
+
+`text-to-sql` &nbsp;`arabic-nlp` &nbsp;`semantic-parsing` &nbsp;`benchmark`
+
+#### [NC Spark](https://github.com/Zeyadmosalem/nc-spark)
+**A role-based compliance training platform that can prove who did what.**
+Four portals and seven authorable activity types. Quizzes are graded server-side —
+the answer key lives in a table no browser role has a grant on, reachable only from
+an Edge Function. XP, streaks, badges and leaderboards all derive from a single
+append-only ledger, so a badge can never disagree with its record.
+
+React 19 · Vite 8 · Supabase / Postgres 17 · Cloudflare Workers
+**1,828 tests · 91% statement coverage**
+
+#### [CCER-SQL](https://github.com/AbdelrahmanAboegela/ccer-sql)
+**Text-to-SQL with semantic schema retrieval (CCER) and a LangGraph agent.**
+Collaborator.
+
+---
+
 ### Stack
 
-<p>
-  <img src="https://skillicons.dev/icons?i=python,ts,js,react,nextjs,tailwind,nodejs,fastapi,postgres,mysql,docker,git,github,linux&theme=dark&perline=7" alt="Tech stack" />
-</p>
+**Core**
+`Python` &nbsp;`TypeScript` &nbsp;`JavaScript` &nbsp;`React` &nbsp;`PostgreSQL` &nbsp;`Git`
 
-Also working with: `LangChain` &nbsp; `LlamaIndex` &nbsp; `RAG` &nbsp; `Text-to-SQL` &nbsp; `pgvector` &nbsp; `Qdrant` &nbsp; `Hugging Face` &nbsp; `Ollama` &nbsp; `OpenAI API` &nbsp; `Pandas`
+**LLM & retrieval**
+`Text-to-SQL` &nbsp;`RAG` &nbsp;`Schema linking` &nbsp;`Cross-lingual semantic parsing` &nbsp;`BIRD benchmark` &nbsp;`LangGraph` &nbsp;`Hugging Face Transformers` &nbsp;`OpenAI API`
+
+**Also working with**
+`Next.js` &nbsp;`Tailwind` &nbsp;`Node.js` &nbsp;`FastAPI` &nbsp;`Supabase` &nbsp;`Cloudflare Workers` &nbsp;`Docker` &nbsp;`Linux` &nbsp;`pandas` &nbsp;`MySQL`
+
+<p>
+  <img src="https://skillicons.dev/icons?i=python,ts,js,react,nextjs,tailwind,nodejs,fastapi,postgres,supabase,cloudflare,docker,git,linux&theme=dark&perline=7" alt="Tech stack" />
+</p>
 
 ---
 
@@ -57,7 +89,6 @@ Also working with: `LangChain` &nbsp; `LlamaIndex` &nbsp; `RAG` &nbsp; `Text-to-
 <img width="760" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Zeyadmosalem&theme=github_dark" alt="Profile summary" />
 
 <img height="190" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Zeyadmosalem&theme=github_dark" alt="Top languages" />
-<img height="190" src="https://streak-stats.demolab.com?user=Zeyadmosalem&hide_border=true&background=0D1117&ring=A855F7&fire=A855F7&currStreakLabel=A855F7&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=8B949E" alt="Contribution streak" />
 
 </div>
 
@@ -68,7 +99,7 @@ Also working with: `LangChain` &nbsp; `LlamaIndex` &nbsp; `RAG` &nbsp; `Text-to-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Zeyadmosalem/Zeyadmosalem/output/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Zeyadmosalem/Zeyadmosalem/output/github-contribution-grid-snake.svg" />
-  <img src="https://raw.githubusercontent.com/Zeyadmosalem/Zeyadmosalem/output/github-contribution-grid-snake-dark.svg" alt="Contribution snake" />
+  <img src="https://raw.githubusercontent.com/Zeyadmosalem/Zeyadmosalem/output/github-contribution-grid-snake-dark.svg" alt="Contribution graph" />
 </picture>
 
 </div>
