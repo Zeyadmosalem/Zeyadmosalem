@@ -1,6 +1,6 @@
 """Animated pixel-art banner for the profile README: the skull logo as a hooded coder at a laptop.
 
-Usage: python3 tools/make_banner.py banner-coder-2.gif path/to/logo.png  (transparent skull, or the round final-logo JPG)
+Usage: python3 tools/make_banner.py banner-coder-3.gif path/to/logo.png  (transparent skull, or the round final-logo JPG)
 """
 import math, random, sys
 from PIL import Image
@@ -108,7 +108,9 @@ def skull_sprite(size=48):
         im.paste(src, (0, 0), src)
         x0, y0, x1, y1 = src.getbbox()
         side = max(x1 - x0, y1 - y0)
-        crop = im.crop((x0, y0, x0 + side, y0 + side))
+        # centre the skull on a square red canvas (cropping past the image edge would pad with black)
+        crop = Image.new("RGB", (side, side), (209, 42, 60))
+        crop.paste(im.crop((x0, y0, x1, y1)), ((side - (x1 - x0)) // 2, (side - (y1 - y0)) // 2))
     else:                                         # the round "final logo" JPG
         crop = src.convert("RGB").crop((58, 40, 250, 232))
     s = crop.resize((size, size), Image.LANCZOS)
@@ -194,6 +196,20 @@ def eye_centres(sprite):
     return sorted(out)        # left eye first
 
 EYES = eye_centres(SK)
+
+def grow(cells, r):
+    out = set(cells)
+    for (x, y) in cells:
+        for dx in range(-r, r + 1):
+            for dy in range(-r, r + 1):
+                if dx * dx + dy * dy <= r * r + 1:
+                    out.add((x + dx, y + dy))
+    return out
+
+_sk = set(SK)
+SHADOW1 = grow(_sk, 1) - _sk                 # tight dark rim
+SHADOW2 = grow(_sk, 3) - _sk - SHADOW1       # softer shade further out
+HOOD_DK = (40, 9, 16)
 STARS = [(rnd.randrange(8, 38), rnd.randrange(12, 40), rnd.random()) for _ in range(14)]
 EMBERS = [(rnd.randrange(150, W), rnd.randrange(H), rnd.choice([1, 2])) for _ in range(16)]
 
@@ -214,7 +230,7 @@ def draw(px, i):
     for y in range(H):
         for x in range(W):
             px[x, y] = BG1 if bayer(x, y) > y / H * 0.9 else BG2
-    for x in (0, 48, 96, 144):
+    for x in (144,):
         for y in range(0, 78):
             put(px, x, y, BG0)
 
@@ -263,11 +279,12 @@ def draw(px, i):
     # hoodie strings
     for y in range(hy + 18, hy + 27):
         put(px, hx - 5, y, GRAY); put(px, hx + 5, y, GRAY)
-    # inside of the hood (shadow around the face)
-    for y in range(hy - 20, hy + 22):
-        for x in range(hx - 21, hx + 22):
-            if ((x + 0.5 - hx) / 20) ** 2 + ((y + 0.5 - hy) / 21) ** 2 <= 1:
-                put(px, x, y, BG0)
+    # inside of the hood: a soft shadow that hugs the skull
+    ox, oy = hx - 19, hy - 21
+    for (x, y) in SHADOW2:
+        put(px, ox + x, oy + y, HOOD_DK)
+    for (x, y) in SHADOW1:
+        put(px, ox + x, oy + y, BG0)
     # skull head
     ox, oy = hx - 19, hy - 21
     for (x, y), c in SK.items():
@@ -292,21 +309,40 @@ def draw(px, i):
     for side, sx, hx0 in ((0, -1, 38), (1, 1, 91)):
         up = ((i + side * 2) // 2) % 2
         # sleeve: from the shoulder down to the wrist
-        for k in range(14):
-            ax = hx + sx * (24 + k * 0.25)
+        for k in range(11):
+            ax = hx + sx * (24 + k * 0.35)
             ay = hy + 19 + k * 1.15
             for w in range(-2, 3):
                 put(px, round(ax) + w, round(ay), HOOD_HI if w == -2 * sx else HOOD)
-        cx0 = round(hx + sx * (24 + 13 * 0.25))
-        for w in range(-3, 4):
-            put(px, cx0 + w, hy + 34, HOOD_HI)         # cuff
-        # hand: palm + three finger bones resting on the keys
-        y0 = hy + 35 - up
-        for dx in range(-2, 3):
-            put(px, cx0 + dx, y0, WHITE)
-            put(px, cx0 + dx, y0 + 1, WHITE if dx != 2 * sx else GRAY)
-        for dx in (-2, 0, 2):
-            put(px, cx0 + dx + sx, y0 + 2, WHITE)
+        cx0 = round(hx + sx * (24 + 13 * 0.35))
+        for w in range(-4, 5):
+            put(px, cx0 + w, hy + 31, HOOD_HI)         # cuff
+            put(px, cx0 + w, hy + 30, HOOD)
+        # skeleton hand: palm bones + five finger bones; fingers tap in turn
+        HAND = ["..#####..", ".#######.", "#########", "#.#.#.#.#", "#.#.#.#.#", "#.#.#.#.#"]
+        hx0 = cx0 - 4
+        y0 = hy + 32
+        cells = {}
+        for r, row in enumerate(HAND):
+            for c, ch in enumerate(row):
+                if ch != "#":
+                    continue
+                if sx < 0:
+                    c2 = c
+                else:
+                    c2 = c
+                finger = c // 2
+                tap = 1 if r >= 3 and (finger + i // 2 + side * 2) % 5 == 0 else 0
+                shade = (c >= 7 and sx > 0) or (c <= 1 and sx < 0)
+                cells[(hx0 + c2, y0 + r + tap)] = GRAY if shade else WHITE
+        for (x, y) in list(cells):                   # dark outline so the bones read
+            for q in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+                if q not in cells:
+                    put(px, q[0], q[1], INK)
+        for (x, y), c in cells.items():
+            put(px, x, y, c)
+        for c in (0, 2, 4, 6, 8):                    # knuckles
+            put(px, hx0 + c, y0 + 2, GRAY)
     # ---- laptop (lid faces us) with the logo sticker
     frame_box(px, 44, 58, 90, 78, STEEL, STEEL_HI, PANEL)
     rect(px, 40, 77, 94, 79, STEEL_HI)
@@ -392,7 +428,7 @@ def frame(i):
 
 frames = [frame(i) for i in range(N)]
 cols = [BG0, BG1, BG2, MAROON, MAROON2, RED, RED_HI, RED_LO, WHITE, GRAY, INK, GREEN, AMBER,
-        PANEL, PANEL_HI, STEEL, STEEL_HI, SCREEN_BG, HOOD, HOOD_HI, GLOW, (40, 170, 90)]
+        PANEL, PANEL_HI, STEEL, STEEL_HI, SCREEN_BG, HOOD, HOOD_HI, GLOW, (40, 170, 90), (40, 9, 16)]
 pal = Image.new('P', (1, 1)); flat = [v for c in cols for v in c]
 pal.putpalette(flat + flat[:3] * (256 - len(cols)))
 qf = [f.quantize(palette=pal, dither=Image.NONE) for f in frames]
