@@ -126,6 +126,19 @@ def skull_sprite(size=48):
 
 SKULL = skull_sprite(54)
 
+# The downsampled eyes are re-drawn by hand so they stay clean when animated.
+# Big round eye: clear the traced one, then draw a clean ellipse each frame.
+EYE_C, EYE_RX, EYE_RY = (18.0, 34.0), 8.0, 11.5
+for (x, y), c in list(SKULL.items()):
+    if c in (INK, GRAY) and 9 <= x <= 26 and 21 <= y <= 46 and x > 5:
+        SKULL[(x, y)] = WHITE
+
+def in_eye(x, y, grow=0.0):
+    return ((x + 0.5 - EYE_C[0]) / (EYE_RX + grow)) ** 2 + ((y + 0.5 - EYE_C[1]) / (EYE_RY + grow)) ** 2 <= 1
+
+# blink: lid position per frame (0 open .. 1 closed)
+LID = {17: 0.35, 18: 0.75, 19: 1.0, 20: 1.0, 21: 0.6, 22: 0.25}
+
 # ---------------------------------------------------------------- static layers
 rnd = random.Random(7)
 STARS = [(rnd.randrange(W), rnd.randrange(0, 60), rnd.random()) for _ in range(70)]
@@ -212,16 +225,44 @@ def frame(i):
     ox, oy = cx - 27, cy - 29 + bob
     for (x, y), c in SKULL.items():
         put(px, ox + x, oy + y, c)
-    # eye glint travels across the big eye
-    gl = i % N
-    if gl in (4, 5, 6):
-        for (x, y) in ((ox + 17, oy + 27), (ox + 18, oy + 26), (ox + 18, oy + 27)):
-            put(px, x, y, MAROON2 if gl == 6 else RED_HI)
-    # blink: the big eye closes for two frames
-    if i in (20, 21):
-        for (x, y), c in SKULL.items():
-            if c == INK and 12 <= x <= 25 and 21 <= y <= 40:
-                put(px, ox + x, oy + y, WHITE if y != 31 else INK)
+    # big eye: socket, lid, red pupil and a fixed shine
+    lid = LID.get(i, 0.0)
+    top = EYE_C[1] - EYE_RY
+    cut = top + lid * EYE_RY * 2 * 0.5 + (EYE_RY if lid >= 1 else 0)
+    glow = (RED_LO, RED, RED_HI, RED)[(i // 4) % 4]
+    look = 1 if 8 <= i <= 15 else 0
+    pcx, pcy = int(EYE_C[0]) + look, int(EYE_C[1]) + 1
+    for y in range(int(top) - 1, int(EYE_C[1] + EYE_RY) + 2):
+        for x in range(int(EYE_C[0] - EYE_RX) - 1, int(EYE_C[0] + EYE_RX) + 2):
+            if not in_eye(x, y):
+                continue
+            if lid >= 1:
+                if y == int(EYE_C[1]) + 2 or (y == int(EYE_C[1]) + 1 and abs(x + 0.5 - EYE_C[0]) < EYE_RX - 2):
+                    put(px, ox + x, oy + y, INK)
+                continue
+            if y < cut:
+                continue                      # covered by the lid (bone colour)
+            put(px, ox + x, oy + y, INK)
+            if lid > 0 and y == int(cut) and in_eye(x, y - 1):
+                put(px, ox + x, oy + y - 1, GRAY)
+    if lid < 0.5:
+        # red ember pupil: a small vertical slit
+        for dy in range(-1, 3):
+            for dx in (0, 1):
+                y = pcy + dy
+                if y >= cut:
+                    put(px, ox + pcx + dx, oy + y, glow if dy in (0, 1) else RED_LO)
+        # shine
+        if lid == 0:
+            for (x, y) in ((13, 27), (14, 27), (13, 28), (14, 28), (16, 26)):
+                put(px, ox + x, oy + y, WHITE)
+
+    # angry eye: same ember pupil and a squint while the big eye blinks
+    if lid < 0.5:
+        ax, ay = 40 + look, 37
+        for (dx, dy) in ((0, 0), (1, 0), (0, 1), (1, 1), (0, 2), (1, 2)):
+            put(px, ox + ax + dx, oy + ay + dy, glow if dy < 2 else RED_LO)
+        put(px, ox + 43, oy + 34, WHITE)
 
     # skyline silhouette
     for (bx, bw, bh) in BUILD:
@@ -263,7 +304,8 @@ def frame(i):
     for (ex, ey, sp) in EMBERS:
         y = (ey - i * sp) % H
         x = ex + round(math.sin((y + ex) / 9))
-        put(px, x, y, RED if sp == 2 else MAROON2)
+        if math.hypot(x - MOON_C[0], y - MOON_C[1]) > MOON_R + 2:
+            put(px, x, y, RED if sp == 2 else MAROON2)
 
     # text block
     tx = 128
