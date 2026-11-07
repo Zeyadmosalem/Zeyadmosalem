@@ -1,6 +1,6 @@
 """Animated pixel-art banner for the profile README: the skull logo as a hooded coder at a laptop.
 
-Usage: python3 tools/make_banner.py banner-coder.gif path/to/logo.png  (transparent skull, or the round final-logo JPG)
+Usage: python3 tools/make_banner.py banner-coder-2.gif path/to/logo.png  (transparent skull, or the round final-logo JPG)
 """
 import math, random, sys
 from PIL import Image
@@ -167,6 +167,33 @@ def frame_box(px, x0, y0, x1, y1, body, hi, lo):
 
 rnd = random.Random(5)
 SK = skull_sprite(38)
+
+def eye_centres(sprite):
+    """Centres of the two eye sockets: the biggest INK blobs not touching the outline."""
+    ink = {p for p, c in sprite.items() if c == INK}
+    seen, blobs = set(), []
+    for p in ink:
+        if p in seen:
+            continue
+        stack, blob, edge = [p], [], False
+        seen.add(p)
+        while stack:
+            x, y = stack.pop()
+            blob.append((x, y))
+            for q in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+                if q not in sprite:
+                    edge = True
+                elif q in ink and q not in seen:
+                    seen.add(q); stack.append(q)
+        if not edge:
+            blobs.append(blob)
+    blobs.sort(key=len, reverse=True)
+    out = []
+    for b in blobs[:2]:
+        out.append((round(sum(x for x, _ in b) / len(b)), round(sum(y for _, y in b) / len(b))))
+    return sorted(out)        # left eye first
+
+EYES = eye_centres(SK)
 STARS = [(rnd.randrange(8, 38), rnd.randrange(12, 40), rnd.random()) for _ in range(14)]
 EMBERS = [(rnd.randrange(150, W), rnd.randrange(H), rnd.choice([1, 2])) for _ in range(16)]
 
@@ -187,7 +214,7 @@ def draw(px, i):
     for y in range(H):
         for x in range(W):
             px[x, y] = BG1 if bayer(x, y) > y / H * 0.9 else BG2
-    for x in range(0, W, 48):
+    for x in (0, 48, 96, 144):
         for y in range(0, 78):
             put(px, x, y, BG0)
 
@@ -226,7 +253,7 @@ def draw(px, i):
         for x in range(hx - 28, hx + 29):
             d = ((x + 0.5 - hx) / 26) ** 2 + ((y + 0.5 - hy - 2) / 25) ** 2
             if d <= 1:
-                rim = ((x + 0.5 - hx) / 26) ** 2 + ((y + 0.5 - hy - 1) / 25) ** 2 > 0.82 and x < hx
+                rim = ((x + 0.5 - hx) / 26) ** 2 + ((y + 0.5 - hy - 1) / 25) ** 2 > 0.82 
                 put(px, x, y, HOOD_HI if rim else HOOD)
     # body / shoulders
     for y in range(hy + 16, 79):
@@ -245,12 +272,11 @@ def draw(px, i):
     ox, oy = hx - 19, hy - 21
     for (x, y), c in SK.items():
         # screen glow from the laptop on the lower face
-        if c == WHITE and y > 26 and bayer(x, y) < 0.35:
-            c = (250, 214, 214)
         put(px, ox + x, oy + y, c)
     glow = (RED_LO, RED, RED_HI, RED)[(i // 3) % 4]
-    for (x, y) in ((12, 23), (13, 23), (12, 24), (13, 24), (27, 25), (28, 25)):
-        put(px, ox + x, oy + y, glow)
+    for (ex, ey) in EYES:
+        for (dx, dy) in ((0, 0), (1, 0), (0, 1), (1, 1)):
+            put(px, ox + ex + dx, oy + ey + dy, glow)
 
     # ---- desk
     rect(px, 0, 78, W, H, PANEL)
@@ -262,6 +288,25 @@ def draw(px, i):
             if bayer(x, y) > 0.85:
                 put(px, x, y, BG1)
 
+    # ---- arms reaching to the keyboard, bony hands typing
+    for side, sx, hx0 in ((0, -1, 38), (1, 1, 91)):
+        up = ((i + side * 2) // 2) % 2
+        # sleeve: from the shoulder down to the wrist
+        for k in range(14):
+            ax = hx + sx * (24 + k * 0.25)
+            ay = hy + 19 + k * 1.15
+            for w in range(-2, 3):
+                put(px, round(ax) + w, round(ay), HOOD_HI if w == -2 * sx else HOOD)
+        cx0 = round(hx + sx * (24 + 13 * 0.25))
+        for w in range(-3, 4):
+            put(px, cx0 + w, hy + 34, HOOD_HI)         # cuff
+        # hand: palm + three finger bones resting on the keys
+        y0 = hy + 35 - up
+        for dx in range(-2, 3):
+            put(px, cx0 + dx, y0, WHITE)
+            put(px, cx0 + dx, y0 + 1, WHITE if dx != 2 * sx else GRAY)
+        for dx in (-2, 0, 2):
+            put(px, cx0 + dx + sx, y0 + 2, WHITE)
     # ---- laptop (lid faces us) with the logo sticker
     frame_box(px, 44, 58, 90, 78, STEEL, STEEL_HI, PANEL)
     rect(px, 40, 77, 94, 79, STEEL_HI)
@@ -269,23 +314,17 @@ def draw(px, i):
         for x in range(61, 73):
             if math.hypot(x - 67 + 0.5, y - 68.5) <= 5.2:
                 put(px, x, y, RED)
-    for (x, y) in ((65, 66), (66, 66), (68, 66), (69, 66), (65, 67), (66, 67), (68, 67), (69, 67), (67, 70), (65, 71), (66, 71), (67, 71), (68, 71), (69, 71), (64, 68), (70, 68), (64, 69), (65, 69), (66, 69), (67, 69), (68, 69), (69, 69), (70, 69)):
-        put(px, x, y, WHITE)
-    for (x, y) in ((65, 67), (66, 67), (68, 67), (69, 67)):
-        put(px, x, y, INK)
+    mini = [".#####.", "#######", "#.###.#", "#######", ".##.##.", "..###.."]
+    for r, row in enumerate(mini):
+        for c, ch in enumerate(row):
+            if ch == "#":
+                put(px, 64 + c, 66 + r, WHITE)
+            elif r in (2, 4) and 0 < c < 6:
+                put(px, 64 + c, 66 + r, INK)
     # glow spilling over the lid top
     for x in range(46, 89):
         if bayer(x, 57) < 0.5:
             put(px, x, 57, GLOW)
-
-    # ---- skeleton hands typing on either side of the lid
-    for side, x0 in ((0, 37), (1, 90)):
-        up = ((i + side * 2) // 2) % 2
-        y0 = 73 - up
-        for (dx, dy) in ((0, 1), (1, 0), (2, 0), (3, 0), (4, 1), (1, 1), (2, 1), (3, 1), (0, 2), (2, 2), (4, 2)):
-            put(px, x0 + dx, y0 + dy, WHITE)
-        for dx in range(-1, 6):
-            put(px, x0 + dx, y0 - 1, HOOD_HI)      # sleeve cuff
 
     # ---- mug + steam
     frame_box(px, 14, 70, 22, 78, GRAY, WHITE, STEEL_HI)
@@ -330,12 +369,6 @@ def draw(px, i):
             for (dx, dy) in ((0, 3), (1, 4), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1), (1, 3), (2, 4), (3, 3), (4, 2), (5, 1), (6, 0)):
                 put(px, bx0 + 9 + dx, by0 + 2 + dy, (40, 170, 90))
 
-    # ---- divider + embers on the right
-    for (ex, ey, sp) in EMBERS:
-        y = (ey - i * sp) % H
-        if y < 77:
-            put(px, ex + round(math.sin((y + ex) / 9)), y, RED if sp == 2 else MAROON2)
-
     # ---- text
     tx = 148
     draw_text(px, "ZEYAD M. SALEM", tx, 26, WHITE, sc=2, gap=1, shadow=RED_LO)
@@ -359,7 +392,7 @@ def frame(i):
 
 frames = [frame(i) for i in range(N)]
 cols = [BG0, BG1, BG2, MAROON, MAROON2, RED, RED_HI, RED_LO, WHITE, GRAY, INK, GREEN, AMBER,
-        PANEL, PANEL_HI, STEEL, STEEL_HI, SCREEN_BG, HOOD, HOOD_HI, GLOW, (250, 214, 214), (40, 170, 90)]
+        PANEL, PANEL_HI, STEEL, STEEL_HI, SCREEN_BG, HOOD, HOOD_HI, GLOW, (40, 170, 90)]
 pal = Image.new('P', (1, 1)); flat = [v for c in cols for v in c]
 pal.putpalette(flat + flat[:3] * (256 - len(cols)))
 qf = [f.quantize(palette=pal, dither=Image.NONE) for f in frames]
