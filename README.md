@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="8351160.gif" alt="Animated pixel-art cockpit banner" width="100%" />
+<img src="banner.gif" alt="Animated pixel-art banner: Zeyad's skull logo on a blood-red moon over a city a test scanner sweeps for bugs" width="100%" />
 
 # Zeyad M. Salem
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=A855F7&center=true&vCenter=true&width=640&lines=QA+Automation+Engineer+%C2%B7+SDET;Playwright+%C2%B7+Vitest+%C2%B7+pgTAP+%C2%B7+GitHub+Actions;Tests+from+the+database+to+the+browser;2%2C900%2B+automated+tests+running+in+CI;Open+to+Remote+Part-Time+%26+Contract+Work" alt="QA Automation Engineer · SDET" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=EF4E5C&center=true&vCenter=true&width=640&lines=QA+Automation+Engineer+%C2%B7+SDET;Playwright+%C2%B7+Vitest+%C2%B7+pgTAP+%C2%B7+GitHub+Actions;Tests+from+the+database+to+the+browser;2%2C900%2B+automated+tests+running+in+CI;Open+to+Remote+Part-Time+%26+Contract+Work" alt="QA Automation Engineer · SDET" />
 
-<a href="https://www.linkedin.com/in/zeyadmosalem/"><img src="https://img.shields.io/badge/LinkedIn-A855F7?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Email-7C3AED?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
-<a href="https://github.com/Zeyadmosalem?tab=followers"><img src="https://img.shields.io/github/followers/Zeyadmosalem?style=flat-square&color=A855F7&labelColor=1a1b27&logo=github&logoColor=white" alt="GitHub followers" /></a>
+<a href="https://www.linkedin.com/in/zeyadmosalem/"><img src="https://img.shields.io/badge/LinkedIn-D12A3C?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Email-961A2A?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+<a href="https://github.com/Zeyadmosalem?tab=followers"><img src="https://img.shields.io/github/followers/Zeyadmosalem?style=flat-square&color=D12A3C&labelColor=0A0407&logo=github&logoColor=white" alt="GitHub followers" /></a>
 
 </div>
 
@@ -101,8 +101,8 @@ Schemas.** Co-author. 2026 IEEE 8th NILES Conference (accepted).
 
 <img src="https://raw.githubusercontent.com/Zeyadmosalem/Zeyadmosalem/output/github-contribution-grid-snake-dark.svg" alt="Contribution graph" />
 
-<a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Open%20to%20remote%20QA%20work-Get%20in%20touch-A855F7?style=for-the-badge&logo=gmail&logoColor=white" alt="Open to remote QA work — get in touch" /></a>
+<a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Open%20to%20remote%20QA%20work-Get%20in%20touch-D12A3C?style=for-the-badge&logo=gmail&logoColor=white" alt="Open to remote QA work — get in touch" /></a>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:A855F7,50:7C3AED,100:4A00E0&height=110&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:400E18,50:961A2A,100:D12A3C&height=110&section=footer" width="100%" />
 
 </div>
