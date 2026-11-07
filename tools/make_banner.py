@@ -174,8 +174,8 @@ EMBERS = [(rnd.randrange(W), rnd.randrange(H), rnd.choice([1, 2])) for _ in rang
 BUGS = [rnd.randrange(W) for _ in range(5)]
 
 LINE1 = "ZEYAD M. SALEM"
-LINE2 = "QA AUTOMATION ENGINEER / SDET"
-LINE3 = "> 2,900+ TESTS PASSING"
+LINE2 = "FULL-STACK DEVELOPER"
+LINE3 = "> BUILD. TEST. SHIP."
 
 def frame(i):
     t = i / N
