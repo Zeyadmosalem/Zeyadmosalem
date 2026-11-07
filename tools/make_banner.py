@@ -1,6 +1,6 @@
 """Animated pixel-art banner for the profile README: the skull logo as a hooded coder at a laptop.
 
-Usage: python3 tools/make_banner.py banner.gif path/to/logo.png  (transparent skull, or the round final-logo JPG)
+Usage: python3 tools/make_banner.py banner-coder.gif path/to/logo.png  (transparent skull, or the round final-logo JPG)
 """
 import math, random, sys
 from PIL import Image
