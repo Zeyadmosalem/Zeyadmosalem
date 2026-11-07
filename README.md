@@ -8,6 +8,7 @@
 
 <a href="https://www.linkedin.com/in/zeyadmosalem/"><img src="https://img.shields.io/badge/LinkedIn-D12A3C?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 <a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Email-961A2A?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+<a href="https://zeyadmosalem.github.io/portfolio/"><img src="https://img.shields.io/badge/Portfolio-EF4E5C?style=flat-square&logo=githubpages&logoColor=white" alt="Portfolio" /></a>
 <a href="https://github.com/Zeyadmosalem?tab=followers"><img src="https://img.shields.io/github/followers/Zeyadmosalem?style=flat-square&color=D12A3C&labelColor=0A0407&logo=github&logoColor=white" alt="GitHub followers" /></a>
 
 </div>
