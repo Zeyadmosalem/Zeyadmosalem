@@ -1,6 +1,6 @@
 """Animated pixel-art banner for the profile README: the skull logo as a hooded coder at a laptop.
 
-Usage: python3 tools/make_banner.py banner-coder-3.gif path/to/logo.png  (transparent skull, or the round final-logo JPG)
+Usage: python3 tools/make_banner.py banner-coder-4.gif path/to/logo.png  (transparent skull, or the round final-logo JPG)
 """
 import math, random, sys
 from PIL import Image
@@ -190,12 +190,36 @@ def eye_centres(sprite):
         if not edge:
             blobs.append(blob)
     blobs.sort(key=len, reverse=True)
+    eye_centres.blobs = blobs[:2]
     out = []
     for b in blobs[:2]:
         out.append((round(sum(x for x, _ in b) / len(b)), round(sum(y for _, y in b) / len(b))))
     return sorted(out)        # left eye first
 
 EYES = eye_centres(SK)
+
+# The traced eyes are jagged at this size, so they are wiped and redrawn as clean shapes.
+for blob in eye_centres.blobs:
+    for p in blob:
+        SK[p] = WHITE
+(LX, LY), (RX, RY) = EYES
+# also wipe the grey shading the trace left around the sockets
+for (x, y), c in list(SK.items()):
+    if c == GRAY and (abs(x - LX) <= 8 and abs(y - LY) <= 10 or abs(x - RX) <= 8 and abs(y - RY) <= 9):
+        if all(q in SK for q in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1))):
+            SK[(x, y)] = WHITE
+
+def in_left_eye(x, y):            # round eye, a tall oval
+    return ((x + 0.5 - (LX + 0.5)) / 5.2) ** 2 + ((y + 0.5 - (LY + 0.3)) / 7.2) ** 2 <= 1
+
+def in_right_eye(x, y):           # angry eye: oval cut by a brow sloping down toward the nose
+    cx, cy = RX + 0.5, RY + 0.3
+    brow = cy - 6.5 + (cx + 5 - (x + 0.5)) * 0.8
+    return ((x + 0.5 - cx) / 5.3) ** 2 + ((y + 0.5 - cy) / 5.8) ** 2 <= 1 and y + 0.5 >= brow
+
+EYE_L = [(x, y) for x in range(LX - 7, LX + 8) for y in range(LY - 9, LY + 10) if in_left_eye(x, y)]
+EYE_R = [(x, y) for x in range(RX - 7, RX + 8) for y in range(RY - 9, RY + 10) if in_right_eye(x, y)]
+BLINK = (24, 25)
 
 def grow(cells, r):
     out = set(cells)
@@ -291,9 +315,25 @@ def draw(px, i):
         # screen glow from the laptop on the lower face
         put(px, ox + x, oy + y, c)
     glow = (RED_LO, RED, RED_HI, RED)[(i // 3) % 4]
-    for (ex, ey) in EYES:
-        for (dx, dy) in ((0, 0), (1, 0), (0, 1), (1, 1)):
-            put(px, ox + ex + dx, oy + ey + dy, glow)
+    if i in BLINK:
+        # closed: a curved lid line for each eye
+        for x in range(LX - 4, LX + 6):
+            put(px, ox + x, oy + LY + 1 + (1 if abs(x - LX - 0.5) > 3 else 0), INK)
+        for x in range(RX - 4, RX + 6):
+            put(px, ox + x, oy + RY + 1 + (1 if abs(x - RX - 0.5) > 3 else 0), INK)
+    else:
+        for (x, y) in EYE_L + EYE_R:
+            put(px, ox + x, oy + y, INK)
+        look = 1 if (i // 8) % 2 else 0            # glance down at the laptop, then up
+        for (ex, ey) in ((LX, LY + 1), (RX, RY + 1)):
+            ey += look
+            for (dx, dy) in ((0, 0), (1, 0), (0, 1), (1, 1)):
+                put(px, ox + ex + dx, oy + ey + dy, glow)
+            put(px, ox + ex, oy + ey - 1, RED_LO); put(px, ox + ex + 1, oy + ey - 1, RED_LO)
+        # shine
+        put(px, ox + LX - 2, oy + LY - 4, WHITE)
+        put(px, ox + LX - 3, oy + LY - 3, WHITE)
+        put(px, ox + RX + 2, oy + RY - 1, WHITE)
 
     # ---- desk
     rect(px, 0, 78, W, H, PANEL)
