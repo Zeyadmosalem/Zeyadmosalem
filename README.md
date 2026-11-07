@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="banner.gif" alt="Animated pixel-art banner: Zeyad's skull logo on a blood-red moon over a city a test scanner sweeps for bugs" width="100%" />
+<img src="banner.gif" alt="Animated pixel-art banner: Zeyad's skull logo on a blood-red moon over a night city, with the title Full-Stack Developer" width="100%" />
 
 # Zeyad M. Salem
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=EF4E5C&center=true&vCenter=true&width=640&lines=QA+Automation+Engineer+%C2%B7+SDET;Playwright+%C2%B7+Vitest+%C2%B7+pgTAP+%C2%B7+GitHub+Actions;Tests+from+the+database+to+the+browser;2%2C900%2B+automated+tests+running+in+CI;Open+to+Remote+Part-Time+%26+Contract+Work" alt="QA Automation Engineer · SDET" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=EF4E5C&center=true&vCenter=true&width=640&lines=Full-Stack+Developer;React+%C2%B7+TypeScript+%C2%B7+Supabase+%C2%B7+Postgres;Secure%2C+tested+web+apps%2C+end+to+end;2%2C900%2B+automated+tests+running+in+CI;Open+to+Remote+Freelance+%26+Part-Time+Work" alt="Full-Stack Developer" />
 
 <a href="https://www.linkedin.com/in/zeyadmosalem/"><img src="https://img.shields.io/badge/LinkedIn-D12A3C?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 <a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Email-961A2A?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
@@ -17,21 +17,22 @@
 
 ### About
 
-I write automated tests that catch real bugs, from Postgres security policies up
-to the browser, and I run them in CI so nothing broken ships.
+I build web apps end to end, from the first conversation with the client to a
+product people use every day, and I make sure they're secure and tested before
+they ship.
 
-I test access control the way an attacker would: red-team suites that try to
-escalate privileges or read data a role shouldn't see, and fail the build if they
-succeed. Across my projects, that's more than **2,900 automated tests** running on
-every push.
+I enforce authorization in the database with Postgres row-level security, keep
+sensitive logic on the server, and back it all with automated tests in CI: more
+than **2,900 tests** across my projects, including red-team suites that try to
+break access control on purpose.
 
-I also build the apps I test, in React, TypeScript and Supabase, so I can read the
-code, find the root cause and write a bug report a developer can act on. I use AI
-coding tools like Claude Code to move faster, while owning the test strategy and
-the quality.
+I work in React, TypeScript and Supabase, and I'm comfortable with Arabic and
+English interfaces, right-to-left layout included. I use AI coding tools like
+Claude Code to move faster, while owning the architecture, the decisions and the
+quality.
 
 Computer Science student at **E-JUST**, Alexandria, Egypt (graduating December 2027).
-Available for remote part-time and contract QA automation work, up to 20 hours a week.
+Available for remote freelance and part-time work, up to 20 hours a week.
 
 ---
 
@@ -39,37 +40,35 @@ Available for remote part-time and contract QA automation work, up to 20 hours a
 
 #### [NC Spark](https://github.com/Zeyadmosalem/nc-spark)
 
-**1,828 tests at 91% statement coverage, including red-team security suites.** A
-role-based compliance training platform with four portals and seven authorable
-activity types. The suites try to escalate privileges and leak the quiz answer key,
-which lives in a table no browser role has a grant on and is reachable only from an
-Edge Function. The tests prove that three independent layers block escalation, and
-that XP, streaks and badges always agree with the single append-only ledger they
-derive from.
+**A role-based compliance training platform that can prove who did what.** Four
+portals and seven authorable activity types. Quizzes are graded server-side: the
+answer key lives in a table no browser role has a grant on, reachable only from an
+Edge Function. Privilege escalation is blocked by three independent layers, and the
+whole site sits behind a Cloudflare Worker access gate. XP, streaks, badges and
+leaderboards all derive from a single append-only ledger, so a badge can never
+disagree with its record.
 
-React 19 · Vite 8 · Supabase / Postgres 17 · Cloudflare Workers
+React 19 · Vite 8 · Supabase / Postgres 17 · Edge Functions · Cloudflare Workers
 **1,828 tests · 91% statement coverage · red-team security suites**
 
 #### [Samboza](https://github.com/Zeyadmosalem/Samboza) — in production
 
-**532 pgTAP policy tests proving who can read and write which rows.** A bilingual
-household finance PWA in daily use since September 2026, where Postgres row-level
-security, not the screen, enforces access across four roles. Its CI pipeline runs
-578 front-end tests on every push and refuses to deploy until the database has
-every migration the bundle expects, covering the double-entry ledger, the audit
-trail and offline writes through an idempotent outbox.
+**A bilingual household finance app, used daily since September 2026.** An
+installable Arabic/English PWA with a full right-to-left layout, where Postgres
+row-level security, not the screen, decides who reads and writes which rows across
+four roles. A double-entry ledger with an audit trail, offline writes through an
+idempotent outbox, Excel export, and a CI pipeline that refuses to deploy until the
+database has every migration the bundle expects.
 
 React 19 · TypeScript · Supabase / Postgres · Cloudflare Workers · GitHub Actions
-**532 pgTAP policy tests · 578 front-end tests · 50 migrations gated in CI**
+**532 pgTAP policy tests · 578 front-end tests · 50 migrations**
 
 #### [Beyond Seen Mistakes](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes) — test & CI contributor
 
-**I wrote the test suite and CI for a published research pipeline.** It covers
-data loaders, the split protocol, training edge cases and reproduction checks. I
-also fixed the reproduction checks to compare results numerically instead of
-bit-for-bit, which made them reliable across machines. The project is the source of
-the JAC-ECC 2026 HAR–EAS submission, which stress-tests six models, including ST-GCN
-and FACT.
+**I wrote the test suite and CI for a published research pipeline**: data loaders,
+the split protocol, training edge cases and reproduction checks. I also made the
+reproduction checks compare results numerically instead of bit-for-bit, so they
+pass reliably across machines.
 [My commits →](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes/commits?author=Zeyadmosalem)
 
 ---
@@ -83,15 +82,15 @@ Schemas.** Co-author. 2026 IEEE 8th NILES Conference (accepted).
 
 ### Stack
 
-**Testing & CI** `Playwright` `Vitest` `pgTAP` `Testing Library` `pytest` `GitHub Actions` `Red-team security tests` `Coverage gates`
+**Front end** `TypeScript` `JavaScript` `React` `Vite` `Tailwind CSS` `TanStack Query` `PWAs` `RTL / Arabic UI`
 
-**Core** `TypeScript` `JavaScript` `Python` `SQL` `PostgreSQL` `Git`
+**Back end & data** `Supabase` `PostgreSQL` `Row-level security` `Edge Functions` `Cloudflare Workers` `Node.js` `SQL` `Python`
 
-**Apps under test** `React` `Supabase` `Row-level security` `Edge Functions` `Cloudflare Workers` `TanStack Query` `Vite` `Node.js` `PWAs`
+**Testing & CI** `Vitest` `pgTAP` `Testing Library` `pytest` `GitHub Actions` `Database migrations` `Git`
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=vitest,githubactions,ts,js,python,postgres,supabase,react,nodejs,vite,cloudflare,git,linux&theme=dark&perline=7" alt="Tech stack" />
+<img src="https://skillicons.dev/icons?i=ts,js,react,vite,tailwind,supabase,postgres,nodejs,cloudflare,python,vitest,githubactions,git,linux&theme=dark&perline=7" alt="Tech stack" />
 
 ---
 
@@ -102,7 +101,7 @@ Schemas.** Co-author. 2026 IEEE 8th NILES Conference (accepted).
 
 <img src="https://raw.githubusercontent.com/Zeyadmosalem/Zeyadmosalem/output/github-contribution-grid-snake-dark.svg" alt="Contribution graph" />
 
-<a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Open%20to%20remote%20QA%20work-Get%20in%20touch-D12A3C?style=for-the-badge&logo=gmail&logoColor=white" alt="Open to remote QA work — get in touch" /></a>
+<a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Open%20to%20remote%20work-Get%20in%20touch-D12A3C?style=for-the-badge&logo=gmail&logoColor=white" alt="Open to remote work — get in touch" /></a>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:400E18,50:961A2A,100:D12A3C&height=110&section=footer" width="100%" />
 
