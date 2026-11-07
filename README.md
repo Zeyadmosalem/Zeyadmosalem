@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="banner-coder-3.gif" alt="Animated pixel-art banner: Zeyad's skull logo as a hooded coder typing on a laptop, with code scrolling on a monitor and the title Full-Stack Developer" width="100%" />
+<img src="banner-coder-4.gif" alt="Animated pixel-art banner: Zeyad's skull logo as a hooded coder typing on a laptop, with code scrolling on a monitor and the title Full-Stack Developer" width="100%" />
 
 # Zeyad M. Salem
 
