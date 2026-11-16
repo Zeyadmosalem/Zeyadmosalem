@@ -129,7 +129,11 @@ Schemas.** Co-author. 2026 IEEE 8th NILES Conference (accepted).
 
 ---
 
-<img src="https://raw.githubusercontent.com/Zeyadmosalem/Zeyadmosalem/output/github-contribution-grid-snake-dark.svg" alt="Contribution graph" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Zeyadmosalem/expedition-contrib/output/expedition-contrib-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Zeyadmosalem/expedition-contrib/output/expedition-contrib.svg">
+  <img alt="Zeyadmosalem's contributions, blasted by the Expedition skull hero" src="https://raw.githubusercontent.com/Zeyadmosalem/expedition-contrib/output/expedition-contrib.svg">
+</picture>
 
 <a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Open%20to%20remote%20work-Get%20in%20touch-D12A3C?style=for-the-badge&logo=gmail&logoColor=white" alt="Open to remote work — get in touch" /></a>
 
