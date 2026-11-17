@@ -4,7 +4,7 @@
 
 # Zeyad M. Salem
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=EF4E5C&center=true&vCenter=true&width=640&lines=Full-Stack+Developer;React+%C2%B7+TypeScript+%C2%B7+Supabase+%C2%B7+Postgres;Secure%2C+tested+web+apps%2C+end+to+end;2%2C900%2B+automated+tests+running+in+CI;Open+to+Remote+Freelance+%26+Part-Time+Work" alt="Full-Stack Developer" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3200&pause=900&color=EF4E5C&center=true&vCenter=true&width=640&lines=Full-Stack+Developer;Business+apps+for+Egyptian+companies;ETA+e-invoicing+%C2%B7+Arabic+PDFs+to+clean+data;React+%C2%B7+TypeScript+%C2%B7+Postgres+%C2%B7+Django;Open+to+Remote+Freelance+%26+Part-Time+Work" alt="Full-Stack Developer" />
 
 <a href="https://www.linkedin.com/in/zeyadmosalem/"><img src="https://img.shields.io/badge/LinkedIn-D12A3C?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 <a href="mailto:zeyadmosalem@gmail.com"><img src="https://img.shields.io/badge/Email-961A2A?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
@@ -17,18 +17,18 @@
 
 ### About
 
-I build web apps end to end, from the first conversation with the client to a
-product people use every day, and I make sure they're secure and tested before
-they ship.
+I build business web apps end to end: the client portal, the back office, the
+database rules that keep each user in their own data, and the tests that prove it.
 
-I enforce authorization in the database with Postgres row-level security, keep
-sensitive logic on the server, and back it all with automated tests in CI: more
-than **2,900 tests** across my projects, including red-team suites that try to
-break access control on purpose.
+Most of my work is for the Egyptian and Arabic-speaking market. I've built an
+accounting and **ETA e-invoicing** system for an accounting firm, a pipeline that turns
+Arabic and English financial-statement PDFs into clean, checked data, and a bilingual
+finance app a household has used every day since September 2026.
 
-I work in React, TypeScript and Supabase, and I'm comfortable with Arabic and
-English interfaces, right-to-left layout included. I use AI coding tools like
-Claude Code to move faster, while owning the architecture, the decisions and the
+I work in React, TypeScript, Supabase/Postgres, Python and Django, and every project
+ships with automated tests in CI: more than **3,500** across my work, including
+red-team suites that try to break access control on purpose. I use AI coding tools
+like Claude Code to move faster, while owning the architecture, the decisions and the
 quality.
 
 Computer Science student at **E-JUST**, Alexandria, Egypt (graduating December 2027).
@@ -37,6 +37,30 @@ Available for remote freelance and part-time work, up to 20 hours a week.
 ---
 
 ### Featured work
+
+#### Accounting & e-invoicing system — client project (private repo)
+
+**A back office and client portal for an Egyptian accounting and tax firm.** Accountants
+keep the general ledger, financial statements, VAT returns, payroll and company
+formation work; the firm's clients log in to issue e-invoices and track their filings.
+It integrates with the Egyptian Tax Authority (ETA) to submit, sync, cancel and reject
+e-invoices and receipts, and builds VAT sheets in ETA's official format. Per-department
+staff permissions, two-factor sign-in for staff, and an audit log of every change.
+
+Python · Django · PostgreSQL · ETA e-invoicing API · Arabic RTL UI
+**~600 tests in CI · 200+ commits · co-developed with one other engineer**
+
+#### Financial statements extraction pipeline — client project (private repo)
+
+**Turns company filings from the Egyptian Exchange into data a benchmarking platform
+can import.** It finds and downloads the annual reports, locates the balance sheet,
+income statement and cash flow pages, reads them from the PDF text layer with an OCR
+fallback for scans (Arabic-Indic digits included), maps every printed line to the
+platform's codes, and checks the totals add up before anything is staged for human
+review. Built to the client's brief so it can move into their backend without a rewrite.
+
+Python · Pydantic · pdfplumber · Tesseract OCR · SQLite → PostgreSQL · CLI
+**~100 tests, including a hand-checked gold set of real filings**
 
 #### [NC Spark](https://github.com/Zeyadmosalem/nc-spark)
 
@@ -63,13 +87,17 @@ database has every migration the bundle expects.
 React 19 · TypeScript · Supabase / Postgres · Cloudflare Workers · GitHub Actions
 **532 pgTAP policy tests · 578 front-end tests · 50 migrations**
 
-#### [Beyond Seen Mistakes](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes) — test & CI contributor
+---
 
-**I wrote the test suite and CI for a published research pipeline**: data loaders,
-the split protocol, training edge cases and reproduction checks. I also made the
-reproduction checks compare results numerically instead of bit-for-bit, so they
-pass reliably across machines.
-[My commits →](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes/commits?author=Zeyadmosalem)
+### More projects
+
+| Project | What it is |
+|---|---|
+| [arabic-doc-qa](https://github.com/Zeyadmosalem/arabic-doc-qa) | Ask questions about an Arabic or English PDF and get answers with clickable page citations. React front end, FastAPI back end, deployed on Vercel. |
+| [Expedition](https://github.com/Zeyadmosalem/Expedition) | An isometric pixel-art shooter for Windows. Every map comes from a constraint solver, and the aliens chase you with BFS, Greedy and A* search. |
+| [The Cafe](https://github.com/Zeyadmosalem/Cafe-Website-Project) | A hand-written HTML/CSS/JS site with a canvas arcade game, accessibility built in, and tests in CI. [Live site →](https://zeyadmosalem.github.io/Cafe-Website-Project/) |
+| [E-JUST GPA Manager](https://github.com/Zeyadmosalem/ejust-gpa-manager) | In progress: a GPA and degree planner that knows E-JUST's study plans, grading weights and prerequisites. TypeScript engine with tests. |
+| [Beyond Seen Mistakes](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes) | Contributor: I wrote the test suite and CI for a published research pipeline, and made its reproduction checks compare results numerically so they pass on any machine. [My commits →](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes/commits?author=Zeyadmosalem) |
 
 ---
 
@@ -84,13 +112,15 @@ Schemas.** Co-author. 2026 IEEE 8th NILES Conference (accepted).
 
 **Front end** `TypeScript` `JavaScript` `React` `Vite` `Tailwind CSS` `TanStack Query` `PWAs` `RTL / Arabic UI`
 
-**Back end & data** `Supabase` `PostgreSQL` `Row-level security` `Edge Functions` `Cloudflare Workers` `Node.js` `SQL` `Python`
+**Back end** `Supabase` `PostgreSQL` `Row-level security` `Edge Functions` `Django` `FastAPI` `Cloudflare Workers` `Node.js`
 
-**Testing & CI** `Vitest` `pgTAP` `Testing Library` `pytest` `GitHub Actions` `Database migrations` `Git`
+**Data & automation** `Python` `SQL` `Pydantic` `PDF extraction` `Tesseract OCR` `Arabic text processing` `ETA e-invoicing API`
+
+**Testing & CI** `Vitest` `pgTAP` `Testing Library` `pytest` `Django test suite` `GitHub Actions` `Database migrations` `Git`
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=ts,js,react,vite,tailwind,supabase,postgres,nodejs,cloudflare,python,vitest,githubactions,git,linux&theme=dark&perline=7" alt="Tech stack" />
+<img src="https://skillicons.dev/icons?i=ts,js,react,vite,tailwind,supabase,postgres,django,fastapi,python,cloudflare,vitest,githubactions,git&theme=dark&perline=7" alt="Tech stack" />
 
 ---
 
