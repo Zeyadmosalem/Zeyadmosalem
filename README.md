@@ -114,7 +114,7 @@ Schemas.** Co-author. 2026 IEEE 8th NILES Conference (accepted).
 
 **Back end** `Supabase` `PostgreSQL` `Row-level security` `Edge Functions` `Django` `FastAPI` `Cloudflare Workers` `Node.js`
 
-**Data & automation** `Python` `SQL` `Pydantic` `PDF extraction` `Tesseract OCR` `Arabic text processing`
+**Data & automation** `Python` `SQL` `Pydantic` `PDF extraction` `Tesseract OCR` `Arabic text processing` `ETA e-invoicing API`
 
 **Testing & CI** `Vitest` `pgTAP` `Testing Library` `pytest` `Django test suite` `GitHub Actions` `Database migrations` `Git`
 
