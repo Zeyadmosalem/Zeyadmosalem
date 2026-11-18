@@ -52,7 +52,7 @@ Python · Django · PostgreSQL · ETA e-invoicing API · Arabic RTL UI
 
 #### Financial statements extraction pipeline — client project (private repo)
 
-**Turns company filings from the Egyptian Exchange into data a benchmarking platform
+**Turns listed companies' annual reports into data a financial data platform
 can import.** It finds and downloads the annual reports, locates the balance sheet,
 income statement and cash flow pages, reads them from the PDF text layer with an OCR
 fallback for scans (Arabic-Indic digits included), maps every printed line to the
@@ -75,7 +75,7 @@ disagree with its record.
 React 19 · Vite 8 · Supabase / Postgres 17 · Edge Functions · Cloudflare Workers
 **1,828 tests · 91% statement coverage · red-team security suites**
 
-#### [Samboza](https://github.com/Zeyadmosalem/Samboza) — in production
+#### Samboza — in production (private repo, walkthrough on request)
 
 **A bilingual household finance app, used daily since September 2026.** An
 installable Arabic/English PWA with a full right-to-left layout, where Postgres
