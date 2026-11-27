@@ -32,7 +32,7 @@ like Claude Code to move faster, while owning the architecture, the decisions an
 quality.
 
 Computer Science student at **E-JUST**, Alexandria, Egypt (graduating December 2027).
-Available for remote freelance and part-time work, up to 20 hours a week.
+Available for remote freelance and part-time work, up to 30 hours a week.
 
 ---
 
@@ -75,7 +75,9 @@ disagree with its record.
 React 19 · Vite 8 · Supabase / Postgres 17 · Edge Functions · Cloudflare Workers
 **1,828 tests · 91% statement coverage · red-team security suites**
 
-#### Samboza — in production (private repo, walkthrough on request)
+[Live demo with made-up data →](https://zeyadmosalem.github.io/portfolio/demos/nc-spark/)
+
+#### Samboza — in production (private repo)
 
 **A bilingual household finance app, used daily since September 2026.** An
 installable Arabic/English PWA with a full right-to-left layout, where Postgres
@@ -87,6 +89,8 @@ database has every migration the bundle expects.
 React 19 · TypeScript · Supabase / Postgres · Cloudflare Workers · GitHub Actions
 **532 pgTAP policy tests · 578 front-end tests · 50 migrations**
 
+[Live demo with a made-up family →](https://zeyadmosalem.github.io/portfolio/demos/samboza/) The real migrations and RLS run in your browser; the family's own app and data stay private.
+
 ---
 
 ### More projects
@@ -94,9 +98,9 @@ React 19 · TypeScript · Supabase / Postgres · Cloudflare Workers · GitHub Ac
 | Project | What it is |
 |---|---|
 | [arabic-doc-qa](https://github.com/Zeyadmosalem/arabic-doc-qa) | Ask questions about an Arabic or English PDF and get answers with clickable page citations. React front end, FastAPI back end, deployed on Vercel. |
-| [Expedition](https://github.com/Zeyadmosalem/Expedition) | An isometric pixel-art shooter for Windows. Every map comes from a constraint solver, and the aliens chase you with BFS, Greedy and A* search. |
+| [Expedition](https://github.com/Zeyadmosalem/Expedition) | An isometric pixel-art shooter for Windows. Every map comes from a constraint solver, and the aliens chase you with BFS, Greedy and A* search. [Play in the browser →](https://zeyadmosalem.github.io/portfolio/demos/expedition/) |
 | [The Cafe](https://github.com/Zeyadmosalem/Cafe-Website-Project) | A hand-written HTML/CSS/JS site with a canvas arcade game, accessibility built in, and tests in CI. [Live site →](https://zeyadmosalem.github.io/Cafe-Website-Project/) |
-| [E-JUST GPA Manager](https://github.com/Zeyadmosalem/ejust-gpa-manager) | In progress: a GPA and degree planner that knows E-JUST's study plans, grading weights and prerequisites. TypeScript engine with tests. |
+| [E-JUST GPA Manager](https://github.com/Zeyadmosalem/ejust-gpa-manager) | In progress: a GPA and degree planner that knows E-JUST's study plans, grading weights and prerequisites. TypeScript engine with tests. [Try it →](https://zeyadmosalem.github.io/portfolio/demos/gpa-manager/) |
 | [Beyond Seen Mistakes](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes) | Contributor: I wrote the test suite and CI for a published research pipeline, and made its reproduction checks compare results numerically so they pass on any machine. [My commits →](https://github.com/AbdelrahmanAboegela/beyond-seen-mistakes/commits?author=Zeyadmosalem) |
 
 ---
